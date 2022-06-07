@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: aliceblue;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > .btn {
+  cursor: pointer;
+  font-size: 3rem;
+  border: 1px solid black;
+  outline: none;
+  background-color: green;
+  color: black;
+}
+.calculator-grid > .divide,
+.multiply,
+.plus,
+.minus,
+.equal {
+  background-color: orange;
+  font-size: 3rem;
+}
+
+.span-two {
+  background-color: blue;
+  font-size: 3rem;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: darkgrey;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: dimgrey;
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: black;
+  font-size: 2.5rem;
+}
